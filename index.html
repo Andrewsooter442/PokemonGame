@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Battle Game</title>
+    <link rel="stylesheet" href="style/battle.css" />
+    <audio id="battleAudio" src="./assets/battle.mp3" preload="auto"></audio>
+    <audio id="openingAudio" src="./assets/opening.mp3" preload="auto"></audio>
+  </head>
+  <body>
+    <div id="pokemonMenu">
+      <div class="menu-header">
+        <h2>Choose Your Pokemon</h2>
+      </div>
+      <div id="pokemonList">
+        <p>Loading Pokémon...</p>
+      </div>
+    </div>
+
+    <div id="battleScreen" class="hidden">
+      <div id="opponentArea" class="battle-area">
+        <div class="pokemon-info">
+          <span id="opponentName">Opponent</span>
+          <div class="hp-bar-container">
+            <div class="hp-bar" id="opponentHpBar"></div>
+            <span class="hp-text" id="opponentHpText">HP: ??/??</span>
+          </div>
+        </div>
+        <img
+          id="opponentSprite"
+          alt="Opponent Pokémon"
+          class="battle-sprite opponent-sprite"
+        />
+      </div>
+
+      <div id="playerArea" class="battle-area">
+        <img
+          id="playerSprite"
+          alt="Player Pokémon"
+          class="battle-sprite player-sprite"
+        />
+        <div class="pokemon-info">
+          <span id="playerName">Player</span>
+          <div class="hp-bar-container">
+            <div class="hp-bar" id="playerHpBar"></div>
+            <span class="hp-text" id="playerHpText">HP: ??/??</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="battleLog">
+        <p id="battleMessage">Select a Pokémon to start the battle!</p>
+      </div>
+
+      <div id="actionMenu" class="hidden">
+        <button id="attackButton">Attack</button>
+      </div>
+
+      <div id="moveMenu" class="hidden"></div>
+    </div>
+
+    <!-- <script src="src/battle/consts.js"></script>
+    <script src="src/battle/helper.js"></script>
+    <script src="src/battle/battle.js"></script> -->
+    <script src="src/battle.js"></script>
+  </body>
+</html>
