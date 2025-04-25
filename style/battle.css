@@ -109,30 +109,30 @@ body {
   width: 100%;
   max-width: 800px;
   height: 750px;
-  background-color: #f0f8ff; 
-  border: 3px solid #4a90e2; 
+  background-color: #f0f8ff;
+  border: 3px solid #4a90e2;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   display: grid;
   grid-template-rows: 40% 30% 15% 15%; /* Opponent  Player  Log  Actions */
   grid-template-columns: 1fr;
-  position: relative; 
+  position: relative;
   overflow: hidden;
-  font-family: "Courier New", Courier, monospace; 
+  font-family: "Courier New", Courier, monospace;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   opacity: 1;
   visibility: visible;
   background-image: url("../assets/battle.gif");
-  background-size: cover;    
-  background-repeat: no-repeat; 
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 #battleScreen.hidden {
   opacity: 0;
   visibility: hidden;
-  position: absolute; 
-  pointer-events: none; 
+  position: absolute;
+  pointer-events: none;
 }
 
 /* HP bar */
@@ -145,7 +145,7 @@ body {
 
 #opponentArea {
   justify-content: flex-start; /*Right side info box */
-  align-items: flex-start; 
+  align-items: flex-start;
   padding-right: 40px; /* Space for info box */
   padding-top: 120px;
 }
@@ -154,31 +154,86 @@ body {
   justify-content: flex-end; /*Left side info box */
   padding-left: 40px; /* Space for info box */
 }
-.shakeMe{
+.shakeMe {
   /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 5s;
+  animation: shake 0.5s;
 
   /* When the animation is finished, start again */
   animation-iteration-count: infinite;
 }
 
 @keyframes shake {
-  0% { transform: translate(2px, 2px) rotate(0deg); }
-  10% { transform: translate(-2px, -4px) rotate(-2deg); }
-  20% { transform: translate(-6px, 0px) rotate(2deg); }
-  30% { transform: translate(6px, 4px) rotate(0deg); }
-  40% { transform: translate(2px, -2px) rotate(2deg); }
-  50% { transform: translate(-2px, 4px) rotate(-2deg); }
-  60% { transform: translate(-6px, 2px) rotate(0deg); }
-  70% { transform: translate(6px, 2px) rotate(-2deg); }
-  80% { transform: translate(-2px, -2px) rotate(2deg); }
-  90% { transform: translate(2px, 4px) rotate(0deg); }
-  100% { transform: translate(2px, -4px) rotate(-2deg); }
+  0% {
+    transform: translate(4px, 4px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-16px, -18px) rotate(-4deg);
+  }
+  20% {
+    transform: translate(-12px, 0px) rotate(4deg);
+  }
+  30% {
+    transform: translate(12px, 8px) rotate(0deg);
+  }
+  40% {
+    transform: translate(6px, -6px) rotate(4deg);
+  }
+  50% {
+    transform: translate(-6px, 8px) rotate(-4deg);
+  }
+  60% {
+    transform: translate(-12px, 6px) rotate(0deg);
+  }
+  70% {
+    transform: translate(12px, 6px) rotate(-4deg);
+  }
+  80% {
+    transform: translate(-6px, -6px) rotate(4deg);
+  }
+  90% {
+    transform: translate(6px, 8px) rotate(0deg);
+  }
+  100% {
+    transform: translate(6px, -8px) rotate(-4deg);
+  }
 }
 
+.animate1 {
+  animation-name: animatePlayer1;
+  animation-duration: 2s;
+}
+
+.animate2 {
+  animation-name: animatePlayer2;
+  animation-duration: 2s;
+}
+
+@keyframes animatePlayer1 {
+  0% {
+  }
+
+  50% {
+    transform: translate(16rem, -10rem);
+  }
+
+  100% {
+  }
+}
+
+@keyframes animatePlayer2 {
+  0% {
+  }
+
+  50% {
+    transform: translate(-16rem, 10rem);
+  }
+
+  100% {
+  }
+}
 
 .pokemon-info {
-  background-color: rgba(255, 255, 255, 0.85); 
+  background-color: rgba(255, 255, 255, 0.85);
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px 10px;
@@ -190,7 +245,7 @@ body {
 }
 
 #opponentArea .pokemon-info {
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 
 #playerArea .pokemon-info {
@@ -218,17 +273,17 @@ body {
 
 .hp-bar {
   height: 100%;
-  width: 100%; 
-  background-color: #4caf50; 
-  border-radius: 6px 0 0 6px; 
-  transition: width 0.5s ease-in-out; 
+  width: 100%;
+  background-color: #4caf50;
+  border-radius: 6px 0 0 6px;
+  transition: width 0.5s ease-in-out;
 }
 /* Colors based on HP percentage */
 .hp-bar.low {
-  background-color: #f44336; 
+  background-color: #f44336;
 }
 .hp-bar.medium {
-  background-color: #ffeb3b; 
+  background-color: #ffeb3b;
 }
 
 .hp-text {
@@ -246,11 +301,11 @@ body {
   height: 200px;
   width: 200px;
   object-fit: contain;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .opponent-sprite {
-  top: 50%; 
+  top: 50%;
   right: 5%;
 }
 
@@ -267,9 +322,9 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  justify-content: center; 
-  flex-direction: column; 
-  gap: 5px; 
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
 }
 
 #battleMessage {
@@ -285,11 +340,11 @@ body {
   justify-content: space-around;
   align-items: center;
   padding: 10px;
-  background-color: #555; 
+  background-color: #555;
 }
 
 #moveMenu {
-  background-color: #666; 
+  background-color: #666;
 }
 
 #actionMenu.hidden,

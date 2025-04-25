@@ -152,6 +152,7 @@ function playerAttack(move) {
   }
 
   enemySprite.classList.add("shakeMe");
+  // mySprite.classList.add("animate1");
   const myAttackStat = myPokemonData.stats.find(
     (s) => s.stat.name === "attack"
   ).base_stat;
@@ -215,6 +216,7 @@ function enemyTurn() {
   }
 
   mySprite.classList.add("shakeMe");
+  // enemySprite.classList.add("animate2");
   const enemyAttackStat = enemyPokemonData.stats.find(
     (s) => s.stat.name === "attack"
   ).base_stat;
