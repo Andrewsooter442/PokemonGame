@@ -21,11 +21,11 @@
     <div id="battleScreen" class="hidden">
       <div id="opponentArea" class="battle-area">
         <div class="pokemon-info">
-          <span id="opponentName">Opponent</span>
           <div class="hp-bar-container">
             <div class="hp-bar" id="opponentHpBar"></div>
             <span class="hp-text" id="opponentHpText">HP: ??/??</span>
           </div>
+          <span id="opponentName">Opponent</span>
         </div>
         <img
           id="opponentSprite"
@@ -41,11 +41,11 @@
           class="battle-sprite player-sprite"
         />
         <div class="pokemon-info">
-          <span id="playerName">Player</span>
           <div class="hp-bar-container">
             <div class="hp-bar" id="playerHpBar"></div>
             <span class="hp-text" id="playerHpText">HP: ??/??</span>
           </div>
+          <span id="playerName">Player</span>
         </div>
       </div>
 
@@ -60,9 +60,9 @@
       <div id="moveMenu" class="hidden"></div>
     </div>
 
-    <!-- <script src="src/battle/consts.js"></script>
-    <script src="src/battle/helper.js"></script>
-    <script src="src/battle/battle.js"></script> -->
-    <script src="src/battle.js"></script>
+    <script defer src="src/battle/menu.js"></script>
+    <script defer src="src/battle/const.js"></script>
+    <script defer src="src/battle/battle.js"></script>
+    <!-- <script src="src/battle.js"></script> -->
   </body>
 </html>
