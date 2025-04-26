@@ -1,3 +1,4 @@
+const startUpScreen = document.getElementById("startupScreen");
 const pokeMenu = document.getElementById("pokemonMenu");
 const pokeList = document.getElementById("pokemonList");
 
@@ -6,7 +7,6 @@ const listUrl = `${pokeApiUrl}pokemon?limit=200&offset=0`;
 
 const introMusic = document.getElementById("openingAudio");
 const fightMusic = document.getElementById("battleAudio");
-loadPokemonChoices();
 
 // Things for the Battle Screen
 const fightScreen = document.getElementById("battleScreen");

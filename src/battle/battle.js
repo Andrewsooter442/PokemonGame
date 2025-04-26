@@ -152,14 +152,14 @@ function playerAttack(move) {
   }
 
   enemySprite.classList.add("shakeMe");
-  // mySprite.classList.add("animate1");
+  enemySprite.classList.remove("animate2");
+  mySprite.classList.add("animate1");
   const myAttackStat = myPokemonData.stats.find(
     (s) => s.stat.name === "attack"
   ).base_stat;
   const enemyDefenseStat = enemyPokemonData.stats.find(
     (s) => s.stat.name === "defense"
   ).base_stat;
-  // Needs Love (make it more elegent)
   let damage =
     (2.5 * myAttackStat * (move.power ?? 40)) / enemyDefenseStat / 52;
   damage *= Math.random();
@@ -175,12 +175,14 @@ function playerAttack(move) {
   if (enemyCurrentHealth <= 0) {
     setTimeout(() => {
       enemySprite.classList.remove("shakeMe");
+      mySprite.classList.remove("animate1");
       finishFight(true);
     }, 1500);
   } else {
     myTurn = false;
     setTimeout(() => {
       enemySprite.classList.remove("shakeMe");
+      mySprite.classList.remove("animate1");
       enemyTurn();
     }, 2000);
   }
@@ -194,7 +196,6 @@ function enemyTurn() {
 
   // Safety check if enemy somehow has no moves
   if (!move) {
-    // console.error("Enemy has no move to use!");
     showBattleMessage(`${enemyPokemonData.name} doesn't know what to do!`);
     myTurn = true;
     whatToDo.classList.remove("hidden");
@@ -215,8 +216,9 @@ function enemyTurn() {
     return;
   }
 
+  mySprite.classList.remove("animate1");
   mySprite.classList.add("shakeMe");
-  // enemySprite.classList.add("animate2");
+  enemySprite.classList.add("animate2");
   const enemyAttackStat = enemyPokemonData.stats.find(
     (s) => s.stat.name === "attack"
   ).base_stat;
@@ -241,6 +243,7 @@ function enemyTurn() {
     myTurn = true;
     setTimeout(() => {
       mySprite.classList.remove("shakeMe");
+      enemySprite.classList.remove("animate2");
       whatToDo.classList.remove("hidden");
       showBattleMessage(`Your turn!`);
     }, 2000);

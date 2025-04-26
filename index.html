@@ -9,7 +9,18 @@
     <audio id="openingAudio" src="./assets/opening.mp3" preload="auto"></audio>
   </head>
   <body>
-    <div id="pokemonMenu">
+    <div id="startupScreen">
+      <div class="startup-content">
+        <h2>Welcome to Pokémon Battle!</h2>
+        <p>
+          Instructions: Click 'Start Game' to choose your Pokémon. Then, select
+          your Pokémon to begin the battle against a random opponent. Use the
+          'Attack' button and choose a move to fight!
+        </p>
+        <button id="startButton" onclick="loadPokemonChoices()">Start</button>
+      </div>
+    </div>
+    <div id="pokemonMenu" class="hidden">
       <div class="menu-header">
         <h2>Choose Your Pokemon</h2>
       </div>
@@ -63,6 +74,85 @@
     <script defer src="src/battle/menu.js"></script>
     <script defer src="src/battle/const.js"></script>
     <script defer src="src/battle/battle.js"></script>
-    <!-- <script src="src/battle.js"></script> -->
   </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Battle Game</title>
+    <link rel="stylesheet" href="style/battle.css" />
+    <audio id="battleAudio" src="./assets/battle.mp3" preload="auto"></audio>
+    <audio id="openingAudio" src="./assets/opening.mp3" preload="auto"></audio>
+  </head>
+  <body>
+    <div id="startupScreen">
+      <div class="startup-content">
+        <h2>Welcome to Pokémon Battle!</h2>
+        <p>
+          Instructions: Click 'Start Game' to choose your Pokémon. Then, select
+          your Pokémon to begin the battle against a random opponent. Use the
+          'Attack' button and choose a move to fight!
+        </p>
+        <button id="startButton" onclick="loadPokemonChoices()">Start</button>
+      </div>
+    </div>
+    <div id="pokemonMenu" class="hidden">
+      <div class="menu-header">
+        <h2>Choose Your Pokemon</h2>
+      </div>
+      <div id="pokemonList">
+        <p>Loading Pokémon...</p>
+      </div>
+    </div>
+
+    <div id="battleScreen" class="hidden">
+      <div id="opponentArea" class="battle-area">
+        <div class="pokemon-info">
+          <div class="hp-bar-container">
+            <div class="hp-bar" id="opponentHpBar"></div>
+            <span class="hp-text" id="opponentHpText">HP: ??/??</span>
+          </div>
+          <span id="opponentName">Opponent</span>
+        </div>
+        <img
+          id="opponentSprite"
+          alt="Opponent Pokémon"
+          class="battle-sprite opponent-sprite"
+        />
+      </div>
+
+      <div id="playerArea" class="battle-area">
+        <img
+          id="playerSprite"
+          alt="Player Pokémon"
+          class="battle-sprite player-sprite"
+        />
+        <div class="pokemon-info">
+          <div class="hp-bar-container">
+            <div class="hp-bar" id="playerHpBar"></div>
+            <span class="hp-text" id="playerHpText">HP: ??/??</span>
+          </div>
+          <span id="playerName">Player</span>
+        </div>
+      </div>
+
+      <div id="battleLog">
+        <p id="battleMessage">Select a Pokémon to start the battle!</p>
+      </div>
+
+      <div id="actionMenu" class="hidden">
+        <button id="attackButton">Attack</button>
+      </div>
+
+      <div id="moveMenu" class="hidden"></div>
+    </div>
+
+    <script defer src="src/startup.js"></script>
+    <script defer src="src/battle/menu.js"></script>
+    <script defer src="src/battle/const.js"></script>
+    <script defer src="src/battle/battle.js"></script>
+  </body>
+</html> -->

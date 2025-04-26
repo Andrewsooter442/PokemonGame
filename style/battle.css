@@ -144,22 +144,22 @@ body {
 }
 
 #opponentArea {
-  justify-content: flex-start; /*Right side info box */
+  justify-content: flex-end; /*Right side info box */
   align-items: flex-start;
   padding-right: 40px; /* Space for info box */
-  padding-top: 120px;
+  padding-top: 350px;
 }
 
 #playerArea {
-  justify-content: flex-end; /*Left side info box */
+  justify-content: flex-start; /*Left side info box */
   padding-left: 40px; /* Space for info box */
+  padding-bottom: 200px;
 }
 .shakeMe {
   /* Start the shake animation and make the animation last for 0.5 seconds */
   animation: shake 0.5s;
 
-  /* When the animation is finished, start again */
-  animation-iteration-count: infinite;
+  animation-iteration-count: 3;
 }
 
 @keyframes shake {
@@ -201,11 +201,13 @@ body {
 .animate1 {
   animation-name: animatePlayer1;
   animation-duration: 2s;
+  animation-iteration-count: 1;
 }
 
 .animate2 {
   animation-name: animatePlayer2;
   animation-duration: 2s;
+  animation-iteration-count: 1;
 }
 
 @keyframes animatePlayer1 {
@@ -374,4 +376,94 @@ body {
 
 .move-button {
   text-transform: capitalize;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute; 
+}
+
+
+#startupScreen {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px; 
+  background-color: #fff;
+  border: 3px solid #fbc02d; 
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  z-index: 2000; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out; /* Smooth fade out */
+  opacity: 1;
+  visibility: visible;
+}
+
+#pokemonMenu {
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+
+#startupScreen.hidden { 
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.startup-content {
+  text-align: center;
+  font-family: "Arial", sans-serif; 
+}
+
+.startup-content h2 {
+  color: #3b4cca; 
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.startup-content p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+#startButton {
+  padding: 12px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  background-color: #ef5350; 
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#startButton:hover {
+  background-color: #d32f2f; 
+  transform: translateY(-2px); 
+}
+
+#startButton:active {
+  transform: translateY(0); 
+}
+
+
+#battleScreen {
+    transition: opacity 0.3s ease, visibility 0.3s ease; 
+}
+
+body {
+    overflow-x: hidden; 
 }
