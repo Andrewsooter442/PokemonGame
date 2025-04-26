@@ -464,11 +464,12 @@ body {
 body {
   overflow-x: hidden;
 }
-  #small-screen-message {
-    display: none;
-  }
+#small-screen-message {
+  display: none;
+}
 @media (max-width: 600px) {
-  #startupScreen {
+  #startupScreen,
+  #battleScreen {
     display: none;
   }
 
