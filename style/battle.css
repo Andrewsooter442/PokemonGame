@@ -382,23 +382,22 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  position: absolute; 
+  position: absolute;
 }
 
-
 #startupScreen {
-  position: fixed; 
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  max-width: 600px; 
+  max-width: 600px;
   background-color: #fff;
-  border: 3px solid #fbc02d; 
+  border: 3px solid #fbc02d;
   border-radius: 15px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  z-index: 2000; 
-  display: flex; 
+  z-index: 2000;
+  display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
@@ -408,11 +407,10 @@ body {
 }
 
 #pokemonMenu {
-    transition: opacity 0.3s ease, visibility 0.3s ease; 
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-
-#startupScreen.hidden { 
+#startupScreen.hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -420,11 +418,11 @@ body {
 
 .startup-content {
   text-align: center;
-  font-family: "Arial", sans-serif; 
+  font-family: "Arial", sans-serif;
 }
 
 .startup-content h2 {
-  color: #3b4cca; 
+  color: #3b4cca;
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 2em;
@@ -442,7 +440,7 @@ body {
   font-size: 1.2em;
   font-weight: bold;
   color: white;
-  background-color: #ef5350; 
+  background-color: #ef5350;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -451,19 +449,34 @@ body {
 }
 
 #startButton:hover {
-  background-color: #d32f2f; 
-  transform: translateY(-2px); 
+  background-color: #d32f2f;
+  transform: translateY(-2px);
 }
 
 #startButton:active {
-  transform: translateY(0); 
+  transform: translateY(0);
 }
 
-
 #battleScreen {
-    transition: opacity 0.3s ease, visibility 0.3s ease; 
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 body {
-    overflow-x: hidden; 
+  overflow-x: hidden;
+}
+  #small-screen-message {
+    display: none;
+  }
+@media (max-width: 600px) {
+  #startupScreen {
+    display: none;
+  }
+
+  #small-screen-message {
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.5rem;
+    color: red;
+  }
 }

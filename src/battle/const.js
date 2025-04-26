@@ -8,6 +8,7 @@ const listUrl = `${pokeApiUrl}pokemon?limit=200&offset=0`;
 const introMusic = document.getElementById("openingAudio");
 const fightMusic = document.getElementById("battleAudio");
 
+
 // Things for the Battle Screen
 const fightScreen = document.getElementById("battleScreen");
 const enemyNameDisplay = document.getElementById("opponentName");
